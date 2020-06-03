@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function move(e) {
 
-
         squares[curIndex].classList.remove("pacman");
         if (curIndex === 152 && e.keyCode === 39) {
             curIndex = 136;
@@ -193,4 +192,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.addEventListener("keyup", move)
+    //document.addEventListener("keydown", move);
 })
