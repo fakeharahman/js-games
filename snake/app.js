@@ -15,6 +15,7 @@ function create() {
     }
 
 }
+// console.log(squares[0]);
 create();
 let curIndex = 0;
 let speed = 0.8;
