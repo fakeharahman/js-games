@@ -60,7 +60,7 @@ function moveInvaders() {
 
     }
     if (squares[shooterIndex].classList.contains("invader")) {
-        score.innerHTML = (`Game Over! \n Score: ${result}`);
+        score.innerHTML = (`\tGame Over! \n Score: ${result}`);
         squares[shooterIndex].classList.add('boom')
         clearInterval(interval)
         // clearInterval(shootInterval)
@@ -73,7 +73,7 @@ function moveInvaders() {
     }
     invaders.forEach(invader => {
         if (invader > width * width - (width - 1)) {
-            score.innerHTML = (`Game Over! \n Score: ${result}`);
+            score.innerHTML = (`\tGame Over! \n Score: ${result}`);
             squares[shooterIndex].classList.add('boom')
             clearInterval(interval)
             // clearInterval(shootInterval)
@@ -86,19 +86,12 @@ function moveInvaders() {
 
     })
     if (invadersShot.length === invaders.length) {
-        score.innerHTML = (`Game Won! \n Score: ${result}`);
+        score.innerHTML = (`\tGame Won! \n Score: ${result}`);
         clearInterval(interval)
         // clearInterval(shootInterval)
         document.removeEventListener("keyup", shoot);
         document.removeEventListener("keyup", moveShooter);
     }
-
-
-
-
-
-
-
 
 
 }
@@ -108,8 +101,12 @@ let interval = setInterval(moveInvaders, 500)
 function shoot(e) {
     let shootInterval;
 
+
+
     let laserIndex = shooterIndex;
     if (e.keyCode === 32) {
+        result--;
+        score.innerHTML = result;
         shootInterval = setInterval(laserfun, 100)
     }
 
@@ -118,10 +115,10 @@ function shoot(e) {
 
         // console.log(laserIndex)
         squares[laserIndex].classList.remove("laser");
-        console.log(squares[laserIndex])
+        // console.log(squares[laserIndex])
         laserIndex = laserIndex - width;
 
-        if (laserIndex - width < 0) {
+        if (laserIndex < 0) {
             // console.log(laserIndex)
             clearInterval(shootInterval);
 
@@ -130,7 +127,7 @@ function shoot(e) {
             // squares[laserIndex].classList.remove("laser");
             squares[laserIndex].classList.add("boom");
             setTimeout(squares[laserIndex].classList.remove("boom"), 400);
-            result++;
+            result += 5;
             score.innerHTML = result;
             clearInterval(shootInterval);
             let invaderShot = invaders.indexOf(laserIndex);
