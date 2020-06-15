@@ -62,6 +62,8 @@ let result = 0;
 
 function flipCard() {
     if (cardsChosen.length < 2) {
+        result--;
+        score.innerHTML = result;
         var cardId = this.getAttribute("data-id");
         chosenCardsId.push(cardId);
         cardsChosen.push(items[cardId].name);
@@ -82,7 +84,7 @@ function checkWin() {
     let second = chosenCardsId[1];
     // console.log(imgs)
     if (first !== second && items[first].name === items[second].name) {
-        result++;
+        result += 10;
         score.innerHTML = result;
         imgs[first].setAttribute("src", "images/black.jpg")
         imgs[second].setAttribute("src", "images/black.jpg")

@@ -32,11 +32,12 @@ function start() {
     curSnake.forEach(item => squares[item].classList.remove("snake"));
     clearInterval(interval);
     appleIndex = 0;
+    score.innerHTML = "0"
     curIndex = 0;
     speed = 0.95;
     curSnake = [2, 1, 0];
     direction = 1;
-    intervalTime = 900;
+    intervalTime = 700;
     curScore = 0;
     randomApple();
     interval = 0;
@@ -47,6 +48,7 @@ function start() {
 }
 
 function control(e) {
+    e.preventDefault();
     if (e.keyCode === 38) {
         direction = -width;
     }
@@ -69,7 +71,7 @@ function move() {
         (curSnake[0] - width < 0 && direction === -width) || //if snake hits the top
         squares[curSnake[0] + direction].classList.contains('snake') //if snake goes into itself
     ) {
-        setTimeout(() => alert(`Game over \n Score: ${curScore}`));
+        score.innerHTML = (`\t ${curScore} <br> Game over  `)
         // squares[appleIndex].classList.remove("apple");
 
         return clearInterval(interval) //this will clear the interval if any of the above happen

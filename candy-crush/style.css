@@ -1,0 +1,14 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black;
+    height: 80vmin;
+    width: 80vmin;
+    background-color: lightcyan;
+}
+
+.grid div {
+    border-radius: 5vmin;
+    height: 10vmin;
+    width: 10vmin;
+}
