@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid")
     const width = 17; //17x17=289
     const score = document.querySelector("#score")
+    const restart = document.getElementById("restart")
 
     //0 pac-dot
     //1 wall
@@ -128,7 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (squares[curIndex].classList.contains('ghost') &&
             !squares[curIndex].classList.contains('scared-ghost')) {
             ghosts.forEach(ghost => clearInterval(ghost.timerId));
-            setTimeout(() => alert(`Game over \n Score: ${curscore}`));
+            setTimeout(() => score.innerHTML = (` ${curscore}<br>Game over!!`));
+            restart.innerHTML = "Press Ctrl+shift+R to restart";
             document.removeEventListener("keyup", move);
 
         }
@@ -137,7 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function gameWon() {
         if (pellets == 132) {
             ghosts.forEach(ghost => clearInterval(ghost.timerId));
-            setTimeout(() => alert(`Game Won \n Score: ${curscore}`));
+            score.innerHTML = (`${curscore}<br>Game Won!!`);
+            restart.innerHTML = "Press Ctrl+shift+R to restart";
+
             document.removeEventListener("keyup", move);
         }
 
@@ -193,4 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("keyup", move)
     //document.addEventListener("keydown", move);
+    window.addEventListener("keydown", function (e) {
+        // space and arrow keys
+        if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+            e.preventDefault();
+        }
+    }, false);
 })

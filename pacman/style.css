@@ -1,23 +1,25 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    height: 510px;
-    width: 510px;
+    height: 85vmin;
+    width: 85vmin;
     /* 30 px block */
     flex-basis: auto;
     flex-grow: 2;
-    border: solid black;
+    border: solid gray;
+    background-color: black;
+    margin-bottom: -1rem;
 
 }
 
 .grid div {
-    width: 30px;
-    height: 30px;
+    width: 5vmin;
+    height: 5vmin;
 }
 
 .pac-dot {
     background-color: green;
-    border: 10px solid white;
+    border: 10px solid black;
     box-sizing: border-box;
 
 }
@@ -30,14 +32,14 @@
 
 .power-pellets {
     background-color: green;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 50%;
     box-sizing: border-box;
 }
 
 .pacman {
     background-color: yellow;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 50%;
     box-sizing: border-box;
 
@@ -49,28 +51,76 @@
 
 .inky {
     background-color: crimson;
-    border: 6px solid white;
+    border: 6px solid black;
     box-sizing: border-box;
 }
 
 .pinky {
     background-color: pink;
-    border: 6px solid white;
+    border: 6px solid black;
     box-sizing: border-box;
 }
 
 .bluy {
     background-color: darkblue;
-    border: 6px solid white;
+    border: 6px solid black;
     box-sizing: border-box;
 }
 
 .purr {
     background-color: darkmagenta;
-    border: 6px solid white;
+    border: 6px solid black;
     box-sizing: border-box;
 }
 
 .scared-ghost {
     background-color: aqua;
 }
+body{
+    color: white;
+    background-color: #181818;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='58' viewBox='0 0 42 58'%3E%3Cg fill='%23000000' fill-opacity='0.45'%3E%3Cpath fill-rule='evenodd' d='M12 18h12v18h6v4H18V22h-6v-4zm-6-2v-4H0V0h36v6h6v36h-6v4h6v12H6v-6H0V16h6zM34 2H2v8h24v24h8V2zM6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 50h32v-8H10V18H2v32zm28-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+h1{
+    color: white;
+    text-align: center;
+   font-size: 5rem;
+   margin-top: 0px;
+   margin-bottom: 0px;
+
+
+}
+.box{
+  
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
+    /* align-content: space-between; */
+    /* height: 75vmin; */
+    width: 60vmax;
+    /* padding-top: 2rem; */
+  
+
+    /* margin: 100px; */
+    /* align-items: center; */
+}
+
+  .centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  h2{
+      text-align: center;
+     
+
+  }

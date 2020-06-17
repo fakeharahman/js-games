@@ -8,13 +8,13 @@ const res = document.getElementById("result");
 
 
 function main(e) {
+    comp.innerHTML = "";
     userChosen = e.target.id;
     computerChosen = computerChoice();
     let resultf = result();
     user.innerHTML = userChosen;
-    comp.innerHTML = computerChosen;
-    res.innerHTML = resultf;
-
+    setTimeout(() => { comp.innerHTML = computerChosen }, 200);
+    setTimeout(() => { res.innerHTML = resultf }, 200);
 
 }
 

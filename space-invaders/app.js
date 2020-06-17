@@ -2,6 +2,7 @@ const width = 15;
 const length = 225;
 const grid = document.querySelector(".grid");
 const score = document.querySelector("#score");
+const restart = document.getElementById("restart");
 let result = 0;
 const squares = [];
 const invaderIndex = 0
@@ -60,7 +61,8 @@ function moveInvaders() {
 
     }
     if (squares[shooterIndex].classList.contains("invader")) {
-        score.innerHTML = (`\tGame Over! \n Score: ${result}`);
+        score.innerHTML = (`${result}<br>Game Over!`);
+        restart.innerHTML = "Press Ctrl+shift+R to restart";
         squares[shooterIndex].classList.add('boom')
         clearInterval(interval)
         // clearInterval(shootInterval)
@@ -73,7 +75,8 @@ function moveInvaders() {
     }
     invaders.forEach(invader => {
         if (invader > width * width - (width - 1)) {
-            score.innerHTML = (`\tGame Over! \n Score: ${result}`);
+            score.innerHTML = (`${result}<br>Game Over!`);
+            restart.innerHTML = "Press Ctrl+shift+R to restart";
             squares[shooterIndex].classList.add('boom')
             clearInterval(interval)
             // clearInterval(shootInterval)
@@ -86,7 +89,8 @@ function moveInvaders() {
 
     })
     if (invadersShot.length === invaders.length) {
-        score.innerHTML = (`\tGame Won! \n Score: ${result}`);
+        score.innerHTML = (`${result}<br>Game Won!`);
+        restart.innerHTML = "Press Ctrl+shift+R to restart";
         clearInterval(interval)
         // clearInterval(shootInterval)
         document.removeEventListener("keyup", shoot);
@@ -145,6 +149,12 @@ function shoot(e) {
 
 
 
-document.addEventListener("keyup", shoot)
+document.addEventListener("keyup", shoot);
+window.addEventListener("keydown", function (e) {
+    // space and arrow keys
+    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 create();

@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
 const score = document.querySelector("#score");
+const restart = document.getElementById("restart")
 let items = [{
     name: "star",
     src: "images/1.jpg"
@@ -98,7 +99,9 @@ function checkWin() {
     }
     // console.log(cardsWon)
     if (cardsWon.length === items.length / 2) {
-        score.textContent = `${result}    YOU WIN!`;
+        score.innerHTML = `${result}<br>YOU WIN!`;
+        restart.innerHTML = "Press ctrl+shift+R to restart"
+
     }
     cardsChosen = [];
     chosenCardsId = [];

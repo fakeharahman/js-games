@@ -37,7 +37,7 @@ function start() {
     speed = 0.95;
     curSnake = [2, 1, 0];
     direction = 1;
-    intervalTime = 700;
+    intervalTime = 500;
     curScore = 0;
     randomApple();
     interval = 0;
@@ -48,7 +48,6 @@ function start() {
 }
 
 function control(e) {
-    e.preventDefault();
     if (e.keyCode === 38) {
         direction = -width;
     }
@@ -71,7 +70,7 @@ function move() {
         (curSnake[0] - width < 0 && direction === -width) || //if snake hits the top
         squares[curSnake[0] + direction].classList.contains('snake') //if snake goes into itself
     ) {
-        score.innerHTML = (`\t ${curScore} <br> Game over  `)
+        score.innerHTML = (`\t ${curScore} <br> Game over!!`)
         // squares[appleIndex].classList.remove("apple");
 
         return clearInterval(interval) //this will clear the interval if any of the above happen
@@ -108,4 +107,10 @@ function randomApple() {
 }
 
 btn.addEventListener("click", start);
+window.addEventListener("keydown", function (e) {
+    // space and arrow keys
+    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 window.addEventListener("keyup", control);
