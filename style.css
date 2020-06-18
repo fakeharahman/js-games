@@ -52,8 +52,8 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   
   h1 {
     color: white;
-    font-size: 7vw;
-    
+    font-size: 9vw;
+    font-family: 'Odibee Sans', cursive;
     text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
   }
   
@@ -129,8 +129,21 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   .inner{
     transition: transform 0.5s;
     -webkit-transition: transform 0.5s;
-   
+  
 
-    
+  }
+  .heading{
+    color: white;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    transition: all .5s;
+  }
+ 
 
+  .heading .h1-hover{
+    color: lightgray;
+    -webkit-text-fill-color: #181818; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightgray;
   }

@@ -90,8 +90,44 @@ var updateTransformStyle = function (x, y, com) {
     com.children[0].style.oTransform = style;
 };
 
+// const heading = document.getElementById("heading");
+// console.log(heading.value)
+// var i = 0;
+// var txt = 'Funities - All about having fun!'; /* The text */
+// var speed = 50; /* The speed/duration of the effect in milliseconds */
 
+// function typeWriter() {
+//     if (i < txt.length) {
+//         heading.innerHTML += txt.charAt(i);
+//         i++;
+//         setTimeout(typeWriter, speed);
+//     }
+// }
 
+// typeWriter();
+
+const heading = document.querySelector(".heading");
+let txt = 'Funities - All about having fun!';
+let i = 0;
+for (i = 0; i < txt.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = txt[i];
+    span.setAttribute("id", i);
+    heading.appendChild(span)
+}
+const spans = heading.querySelectorAll("span");
+
+function setAnimation() {
+    console.log(this)
+    this.classList.add("h1-hover")
+}
+function deleteAnimation() {
+    console.log(this)
+    setTimeout(() => { this.classList.remove("h1-hover") }, 150)
+}
+
+spans.forEach(span => span.addEventListener("mouseenter", setAnimation));
+spans.forEach(span => span.addEventListener("mouseleave", deleteAnimation));
 
 container.forEach(container => container.addEventListener("mouseenter", onMouseEnterHandler));
 container.forEach(container => container.addEventListener("mouseleave", onMouseLeaveHandler));
