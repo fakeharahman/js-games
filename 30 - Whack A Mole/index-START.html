@@ -9,9 +9,21 @@
 </head>
 
 <body>
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#">Funities.</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Images</a></li>
+      <li><a href="#">Locations</a></li>
+
+    </ul>
+  </nav>
+
 
   <h1>Whack-a-mole! <span class="score">0</span></h1>
-  <button onClick="startGame()">Start!</button>
+  <div class="container"><button onClick="startGame()" id="btn">Start!</button></div>
+
 
   <div class="game">
     <div class="hole hole1">
@@ -91,6 +103,25 @@
     }
 
     moles.forEach(mole => mole.addEventListener("click", bonk))
+
+    const nav = document.querySelector("#main");
+    const topOfNav = nav.offsetTop;
+
+
+    function fixedNav() {
+      // console.log(window.scrollY)
+      if (window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + "px";
+        document.body.classList.add("fixed-nav");
+
+      } if (window.scrollY == 0) {
+        document.body.style.paddingTop = 0;
+        document.body.classList.remove("fixed-nav");
+
+      }
+    }
+
+    window.addEventListener("scroll", fixedNav);
 
   </script>
 </body>

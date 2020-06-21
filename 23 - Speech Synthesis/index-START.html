@@ -9,25 +9,37 @@
 </head>
 
 <body>
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#">Funities.</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Images</a></li>
+      <li><a href="#">Locations</a></li>
 
-  <div class="voiceinator">
+    </ul>
+  </nav>
+  <div class="container">
 
-    <h1>The Voiceinator 5000</h1>
+    <div class="voiceinator">
 
-    <select name="voice" id="voices">
-      <option value="">Select A Voice</option>
-    </select>
+      <h1>The Voiceinator 5000</h1>
 
-    <label for="rate">Rate:</label>
-    <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+      <select name="voice" id="voices">
+        <option value="">Select A Voice</option>
+      </select>
 
-    <label for="pitch">Pitch:</label>
+      <label for="rate">Rate:</label>
+      <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
 
-    <input name="pitch" type="range" min="0" max="2" step="0.1">
-    <textarea name="text">Hello! I love JavaScript 👍</textarea>
-    <button id="stop">Stop!</button>
-    <button id="speak">Speak</button>
+      <label for="pitch">Pitch:</label>
 
+      <input name="pitch" type="range" min="0" max="2" step="0.1">
+      <textarea name="text">Hello! I love JavaScript 👍</textarea>
+      <button id="stop">Stop!</button>
+      <button id="speak">Speak</button>
+
+    </div>
   </div>
 
   <script>
@@ -72,6 +84,26 @@
     options.forEach(option => option.addEventListener("change", changeValues))
     speakButton.addEventListener("click", toggle);
     stopButton.addEventListener("click", () => speechSynthesis.cancel());
+
+
+    const nav = document.querySelector("#main");
+    const topOfNav = nav.offsetTop;
+
+
+    function fixedNav() {
+      // console.log(window.scrollY)
+      if (window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + "px";
+        document.body.classList.add("fixed-nav");
+
+      } if (window.scrollY == 0) {
+        document.body.style.paddingTop = 0;
+        document.body.classList.remove("fixed-nav");
+
+      }
+    }
+
+    window.addEventListener("scroll", fixedNav);
   </script>
 
 </body>
