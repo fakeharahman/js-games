@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Other Projects!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../about/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="heading"></h1>
+    </header>
+
+
+    <nav id="main">
+        <ul>
+            <li class="logo"><a href="#">Funities.</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li><a href="../Other Projects/otherProjects.html">Other Projects</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="site-wrap">
+
+        <p>This page is under construstion. Please visit again soon. Click <a href="../index.html">here</a> to go to the
+            home page.</p>
+
+        <script>
+            const nav = document.querySelector("#main");
+            const topOfNav = nav.offsetTop;
+
+
+            function fixedNav() {
+                if (window.scrollY >= topOfNav) {
+                    document.body.style.paddingTop = nav.offsetHeight + "px";
+                    document.body.classList.add("fixed-nav");
+
+                } else {
+                    document.body.style.paddingTop = 0;
+                    document.body.classList.remove("fixed-nav");
+
+                }
+            }
+
+            window.addEventListener("scroll", fixedNav);
+
+            const heading = document.querySelector(".heading");
+            let txt = 'Other Projects!';
+            let i = 0;
+            for (i = 0; i < txt.length; i++) {
+                const span = document.createElement("span");
+                span.textContent = txt[i];
+                span.setAttribute("id", i);
+                heading.appendChild(span)
+            }
+            const spans = heading.querySelectorAll("span");
+
+            function setAnimation() {
+                // console.log(this)
+                this.classList.add("h1-hover")
+            }
+            function deleteAnimation() {
+                // console.log(this)
+                setTimeout(() => { this.classList.remove("h1-hover") }, 150)
+            }
+
+            spans.forEach(span => span.addEventListener("mouseenter", setAnimation));
+            spans.forEach(span => span.addEventListener("mouseleave", deleteAnimation));
+        </script>
+
+</body>
+
+</html>

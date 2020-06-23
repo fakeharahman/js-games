@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="heading"></h1>
+    </header>
+
+
+    <nav id="main">
+        <ul>
+            <li class="logo"><a href="#">Funities.</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li><a href="../Other Projects/otherProjects.html">Other Projects</a></li>
+
+        </ul>
+    </nav>
+
+
+    <div class="site-wrap">
+
+        <p>
+            <img src="../assets/WhatsApp Image 2020-06-24 at 01.41.16.jpeg">
+
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate,
+            corporis a
+            qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+            blanditiis
+            quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut,
+            dignissimos.</p>
+
+
+        <script>
+            const nav = document.querySelector("#main");
+            const topOfNav = nav.offsetTop;
+
+
+            function fixedNav() {
+                if (window.scrollY >= topOfNav) {
+                    document.body.style.paddingTop = nav.offsetHeight + "px";
+                    document.body.classList.add("fixed-nav");
+
+                } else {
+                    document.body.style.paddingTop = 0;
+                    document.body.classList.remove("fixed-nav");
+
+                }
+            }
+
+            window.addEventListener("scroll", fixedNav);
+
+            const heading = document.querySelector(".heading");
+            let txt = 'All About Me!';
+            let i = 0;
+            for (i = 0; i < txt.length; i++) {
+                const span = document.createElement("span");
+                span.textContent = txt[i];
+                span.setAttribute("id", i);
+                heading.appendChild(span)
+            }
+            const spans = heading.querySelectorAll("span");
+
+            function setAnimation() {
+                // console.log(this)
+                this.classList.add("h1-hover")
+            }
+            function deleteAnimation() {
+                // console.log(this)
+                setTimeout(() => { this.classList.remove("h1-hover") }, 150)
+            }
+
+            spans.forEach(span => span.addEventListener("mouseenter", setAnimation));
+            spans.forEach(span => span.addEventListener("mouseleave", deleteAnimation));
+        </script>
+
+</body>
+
+</html>

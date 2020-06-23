@@ -13,6 +13,7 @@ body {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  margin-bottom: 5%;
   font-family: 'Amatic SC', cursive;
 }
 
@@ -90,7 +91,7 @@ nav {
 .fixed-nav nav {
   position: fixed;
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
-  /* opacity: 0.8; */
+  opacity: 0.8;
 
 }
 

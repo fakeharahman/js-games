@@ -118,11 +118,11 @@ for (i = 0; i < txt.length; i++) {
 const spans = heading.querySelectorAll("span");
 
 function setAnimation() {
-    console.log(this)
+    // console.log(this)
     this.classList.add("h1-hover")
 }
 function deleteAnimation() {
-    console.log(this)
+    // console.log(this)
     setTimeout(() => { this.classList.remove("h1-hover") }, 150)
 }
 
